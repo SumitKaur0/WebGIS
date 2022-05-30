@@ -1,0 +1,72 @@
+/* Sidebar Menu */
+
+#logo {
+    width: 60px;
+}
+
+.main {
+    transition: margin-left .5s;
+    /*fürs herausfahren*/
+    margin-left: 60px;
+    padding: 0;
+}
+
+.sidebar {
+    height: 100%;
+    width: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: gray;
+    overflow-x: hidden;
+}
+
+.sidebar button {
+    background-color: black;
+    padding: 10px 0px 6px 16px;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+.sidebar button:hover {
+    color: #f1f1f1;
+}
+
+
+ul.layer-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 1em;
+}
+
+ui.layer-ul li {
+    margin-bottom: 0.4em;
+}
+
+h2.layer-h2 {
+    font-size: 1.2em;
+}
+
+.infobar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #666666;
+    transition: 0.5s;
+    padding-top: 0;
+    margin-left: 60px;
+    color: #f1f1f1;
+    display: none;
+}
+
+.infobar h1 {
+    font-size: 1.5em;
+    border-bottom: 2px;
+    margin-right: 20px;
+}

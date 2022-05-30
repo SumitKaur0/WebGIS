@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebGIS 2022</title>
+</head>
+
+<body>
+  <div class="sidebar">
+    <img id="logo" src="images/webgis.png">
+    <button onclick="infoCloseAll()"><i class="fa-solid fa-house"></i></button>
+    <button onclick="info('baselayer')"><i class="fa-solid fa-map"></i></button>
+    <button onclick="info('coordinates')"><i class="fa-solid fa-circle-info"></i></button>
+    <button onclick="info('routing')"><i class="fa-solid fa-car"></i></button>
+  </div>
+  <div id="baselayer" class="infobar"></div>
+  <div id="coordinates" class="infobar">
+    <h1>Koordinaten</h1>
+    <table class="coords">
+      <tr>
+        <td>WGS 84:</td>
+        <td></td>
+        <td id="mouseCoord4326"></td>
+      </tr>
+      <tr>
+        <td>Clicked at:</td>
+        <td><button onclick="copy2clipboard('mouseCoord4326ClickedAt')" class="clipboard"><i
+              class="fa-solid fa-clipboard"></i></button></td>
+        <td>
+          <input type="text" id="mouseCoord4326ClickedAt" class="clipboard-input" disabled="disabled" />
+        </td>
+      </tr>
+      <tr>
+        <td>Web Mercator:</td>
+        <td></td>
+        <td id="mouseCoord3857"></td>
+      </tr>
+      <tr>
+        <td>Clicked at:</td>
+        <td><button onclick="copy2clipboard('mouseCoord3857ClickedAt')" class="clipboard"><i
+              class="fa-solid fa-clipboard"></i></button></td>
+        <td>
+          <input type="text" id="mouseCoord3857ClickedAt" class="clipboard-input" disabled="disabled" />
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="routing" class="infobar">
+    <h1>Routing</h1>
+    <table>
+      <tr>
+        <td>Longitude:</td>
+        <td id="mouseLon"></td>
+      </tr>
+      <tr>
+        <td>Latitude:</td>
+        <td id="mouseLat"></td>
+      </tr>
+    </table>
+    <select id="waypoints" size="5" class="waypoints"></select>
+    <div>
+      <button id="waypoint-add" type="button" class="btn btn-primary" title="add waypoint"><i
+          class="fa fa-fw fa-plus-square"></i></button>
+      <button id="waypoint-remove" type="button" class="btn btn-primary" title="remove waypoint"><i
+          class="fa fa-fw fa-minus-square"></i></button>
+      <button id="waypoint-up" type="button" class="btn btn-success" title="move waypoint up"><i
+          class="fa fa-fw fa-arrow-circle-up"></i></button>
+      <button id="waypoint-down" type="button" class="btn btn-success" title="move waypoint down"><i
+          class="fa fa-fw fa-arrow-circle-down"></i></button>
+      <button id="route-get" type="button" class="btn btn-danger" title="get route"><i
+          class="fa fa-fw fa-route"></i></button>
+      <button id="route-zoom" type="button" class="btn btn-warning" title="zoom to route"><i
+          class="fa fa-fw fa-search-plus"></i></button>
+      <button id="route-remove" type="button" class="btn btn-info" title="remove route"><i
+          class="fa fa-fw fa-times"></i></button>
+    </div>
+    <table class="route-value-table">
+      <tr>
+        <td>Distance:</td>
+        <td id="distance"></td>
+        <td> km</td>
+      </tr>
+      <tr>
+        <td>Time:</td>
+        <td id="time"></td>
+        <td> h</td>
+      </tr>
+    </table>
+    <div id="route-info"></div>
+  </div>
+
+  <div id="main" class="main">
+    <div id="map" class="map"></div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

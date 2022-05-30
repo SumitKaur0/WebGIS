@@ -1,0 +1,15 @@
+.clipboard {
+    color: #a6acaf;
+    background-color: #666;
+    border: none;
+    border-radius: 4px;
+}
+
+.clipboard:hover {
+    background-color: #aaa;
+    color: white;
+}
+
+.clipboard:active {
+    background-color: #a6acaf;
+}
